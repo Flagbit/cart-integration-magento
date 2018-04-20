@@ -3,6 +3,7 @@
   "description": "Integrates the Magento 1 shopping cart solution with Shopgate",
   "homepage": "https://github.com/shopgate/cart-integration-magento",
   "license": "Apache-2.0",
+  "type": "magento-module",
   "config": {
     "platform": {
       "php": "5.3.3"
@@ -25,6 +26,23 @@
   "suggests": {
     "magento-hackathon/magento-composer-installer": "~3.0.0"
   },
+  "extra":{
+      "map": [
+        ["src/app/etc/modules/Shopgate_Framework.xml", "app/etc/modules/Shopgate_Framework.xml"],
+        ["src/app/code/community/Shopgate/*", "app/code/community/Shopgate"],
+        ["src/app/design/adminhtml/default/default/layout/shopgate.xml", "app/design/adminhtml/default/default/layout/shopgate.xml"],
+        ["src/app/design/adminhtml/default/default/template/shopgate", "app/design/adminhtml/default/default/template/shopgate"],
+        ["src/app/design/frontend/base/default/layout/shopgate.xml", "app/design/frontend/base/default/layout/shopgate.xml"],
+        ["src/app/design/frontend/base/default/template/shopgate", "app/design/frontend/base/default/template/shopgate"],
+        ["src/app/locale/de_AT/Shopgate_Framework.csv", "app/locale/de_AT/Shopgate_Framework.csv"],
+        ["src/app/locale/de_CH/Shopgate_Framework.csv", "app/locale/de_CH/Shopgate_Framework.csv"],
+        ["src/app/locale/de_DE/Shopgate_Framework.csv", "app/locale/de_DE/Shopgate_Framework.csv"],
+        ["src/media/shopgate", "media/amasty"],
+        ["src/skin/adminhtml/default/default/shopgate", "skin/adminhtml/default/default/shopgate"],
+        ["src/var/connect/shopgate_module.xml", "var/connect/shopgate_module.xml"],
+        ["../cart-integration-sdk", "lib/Shopgate/cart-integration-sdk"]
+      ]
+    },
   "keywords": [
     "mobile",
     "app"
