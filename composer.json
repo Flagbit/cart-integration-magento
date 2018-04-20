@@ -37,7 +37,7 @@
         ["src/app/locale/de_AT/Shopgate_Framework.csv", "app/locale/de_AT/Shopgate_Framework.csv"],
         ["src/app/locale/de_CH/Shopgate_Framework.csv", "app/locale/de_CH/Shopgate_Framework.csv"],
         ["src/app/locale/de_DE/Shopgate_Framework.csv", "app/locale/de_DE/Shopgate_Framework.csv"],
-        ["src/media/shopgate", "media/amasty"],
+        ["src/media/shopgate", "media/shopgate"],
         ["src/skin/adminhtml/default/default/shopgate", "skin/adminhtml/default/default/shopgate"],
         ["src/var/connect/shopgate_module.xml", "var/connect/shopgate_module.xml"],
         ["../cart-integration-sdk", "lib/Shopgate/cart-integration-sdk"]
