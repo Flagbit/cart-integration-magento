@@ -27,21 +27,21 @@
     "magento-hackathon/magento-composer-installer": "~3.0.0"
   },
   "extra":{
-      "map": [
-        ["src/app/etc/modules/Shopgate_Framework.xml", "app/etc/modules/Shopgate_Framework.xml"],
-        ["src/app/code/community/Shopgate/*", "app/code/community/Shopgate"],
-        ["src/app/design/adminhtml/default/default/layout/shopgate.xml", "app/design/adminhtml/default/default/layout/shopgate.xml"],
-        ["src/app/design/adminhtml/default/default/template/shopgate", "app/design/adminhtml/default/default/template/shopgate"],
-        ["src/app/design/frontend/base/default/layout/shopgate.xml", "app/design/frontend/base/default/layout/shopgate.xml"],
-        ["src/app/design/frontend/base/default/template/shopgate", "app/design/frontend/base/default/template/shopgate"],
-        ["src/app/locale/de_AT/Shopgate_Framework.csv", "app/locale/de_AT/Shopgate_Framework.csv"],
-        ["src/app/locale/de_CH/Shopgate_Framework.csv", "app/locale/de_CH/Shopgate_Framework.csv"],
-        ["src/app/locale/de_DE/Shopgate_Framework.csv", "app/locale/de_DE/Shopgate_Framework.csv"],
-        ["src/media/shopgate", "media/shopgate"],
-        ["src/skin/adminhtml/default/default/shopgate", "skin/adminhtml/default/default/shopgate"],
-        ["src/var/connect/shopgate_module.xml", "var/connect/shopgate_module.xml"],
-        ["../cart-integration-sdk", "lib/Shopgate/cart-integration-sdk"]
-      ]
+    "map": [
+      ["src/app/code/community/Shopgate/*", "app/code/community/Shopgate"],
+      ["src/app/design/adminhtml/default/default/layout/*", "app/design/adminhtml/default/default/layout"],
+      ["src/app/design/adminhtml/default/default/template/shopgate", "app/design/adminhtml/default/default/template/shopgate"],
+      ["src/app/design/frontend/base/default/layout/*", "app/design/frontend/base/default/layout"],
+      ["src/app/design/frontend/base/default/template/shopgate/*", "app/design/frontend/base/default/template/shopgate"],
+      ["src/app/etc/modules/Shopgate_*.xml", "app/etc/modules"],
+      ["src/app/locale/de_AT/*", "app/locale/de_AT"],
+      ["src/app/locale/de_CH/*", "app/locale/de_CH"],
+      ["src/app/locale/de_DE/*", "app/locale/de_DE"],
+      ["src/media/shopgate", "media/shopgate"],
+      ["src/skin/adminhtml/default/default/shopgate/*", "skin/adminhtml/default/default/shopgate"],
+      ["src/var/connect/*", "var/connect"],
+      ["../cart-integration-sdk", "lib/Shopgate/cart-integration-sdk"]
+    ]
     },
   "keywords": [
     "mobile",
