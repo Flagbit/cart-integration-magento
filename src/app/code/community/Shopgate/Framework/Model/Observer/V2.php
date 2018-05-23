@@ -19,21 +19,20 @@
  * @copyright Shopgate Inc
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
-class Shopgate_Framework_Model_Cataloginventory_Stock extends Shopgate_Framework_Model_Cataloginventory_Stock_Abstract
+class Shopgate_Framework_Model_Observer_V2
 {
+    const SHOPGATE_CLOUDAPI_MODULE_NAME = 'Shopgate_Cloudapi';
+
     /**
-     * @param Varien_Object $item
-     * @return $this|Mage_CatalogInventory_Model_Stock
+     * Check if CloudApi plugin is active
      */
-    public function registerItemSale(Varien_Object $item)
+    public function execute()
     {
-        if (Mage::helper("shopgate")->isShopgateApiRequest()
-            && Mage::helper("shopgate/config")->getIsMagentoVersionLower15()
-        ) {
-            return $this;
+        if (Mage::helper('core')->isModuleEnabled(self::SHOPGATE_CLOUDAPI_MODULE_NAME)) {
+            Mage::getConfig()->setNode(
+                'frontend/routers/shopgate/args/modules/shopgate_cloudapi',
+                self::SHOPGATE_CLOUDAPI_MODULE_NAME
+            );
         }
-
-        return parent::registerItemSale($item);
     }
-
 }

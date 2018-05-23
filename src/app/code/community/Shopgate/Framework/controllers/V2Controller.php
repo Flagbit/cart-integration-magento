@@ -24,15 +24,7 @@
  * The controller is needed only in the Cloud API integration, unfortunately
  * the /shopgate route is already used by Framework plugin.
  */
-if (Mage::helper('core')->isModuleEnabled('Shopgate_Cloudapi')) {
-    /** @noinspection PhpIncludeInspection */
-    require_once Mage::getModuleDir('controllers', 'Shopgate_Cloudapi') . DS . 'V2Controller.php';
-
-    class Shopgate_Framework_V2Controller extends Shopgate_Cloudapi_V2Controller
-    {
-    }
-} else {
-    class Shopgate_Framework_V2Controller extends Mage_Core_Controller_Front_Action
-    {
-    }
+class Shopgate_Framework_V2Controller extends Mage_Core_Controller_Front_Action
+{
 }
+

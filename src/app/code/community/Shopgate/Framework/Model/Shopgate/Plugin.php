@@ -369,6 +369,7 @@ class Shopgate_Framework_Model_Shopgate_Plugin extends ShopgatePlugin
             $magentoOrder = $this->_getFactory()->getPayment()->createNewOrder($quote);
 
             $this->log('# Modifying order', ShopgateLogger::LOGTYPE_DEBUG);
+            Mage::dispatchEvent('shopgate_modify_order_before', array('order' => $magentoOrder));
             $magentoOrder->setCanEdit(false);
             $magentoOrder->setCanShipPartially(true);
             $magentoOrder->setCanShipPartiallyItem(true);
@@ -627,6 +628,10 @@ class Shopgate_Framework_Model_Shopgate_Plugin extends ShopgatePlugin
 
                 if (!is_null($productWeight)) {
                     $quoteItem->setWeight($productWeight);
+
+                    foreach ($quoteItem->getChildren() as $child) {
+                        $child->setWeight($productWeight);
+                    }
                 }
                 $quoteItem->setRowWeight($quoteItem->getWeight() * $quoteItem->getQty());
                 $quoteItem->setWeeeTaxApplied(serialize(array()));
@@ -955,7 +960,7 @@ class Shopgate_Framework_Model_Shopgate_Plugin extends ShopgatePlugin
             );
             $shippingAddress     = $quote->getShippingAddress()->addData($shippingAddressData);
             $shippingAddress->setSameAsBilling($invoiceAddress->equals($deliveryAddress));
-            
+
             $this->_getHelper()->setShippingMethod($shippingAddress, $order);
             $this->log('delivery address end', ShopgateLogger::LOGTYPE_DEBUG);
         }
